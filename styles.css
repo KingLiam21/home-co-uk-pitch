@@ -1,14 +1,17 @@
 /* Modern Pitch Deck Styles - Home.co.uk Redesign */
 
 :root {
-  --primary: #0066cc;
-  --primary-dark: #0052a3;
-  --secondary: #f5f7fa;
-  --text-dark: #0f172a;
-  --text-muted: #475569;
-  --text-light: #64748b;
-  --border: #e2e8f0;
+  --primary: #003d99;
+  --primary-dark: #002d6d;
+  --primary-light: #0052cc;
+  --secondary: #f0f4f8;
+  --accent: #ff6b35;
+  --text-dark: #1a1a1a;
+  --text-muted: #666666;
+  --text-light: #999999;
+  --border: #d9d9d9;
   --white: #ffffff;
+  --bg-light: #f8f9fa;
   --success: #22c55e;
 }
 
@@ -47,10 +50,11 @@ html, body {
 }
 
 .logo-text {
-  font-size: 20px;
-  font-weight: 700;
+  font-size: 22px;
+  font-weight: 800;
   color: var(--primary);
   letter-spacing: -0.5px;
+  text-transform: uppercase;
 }
 
 .nav-links a {
@@ -88,11 +92,12 @@ main {
 }
 
 .section-header h2 {
-  font-size: 42px;
-  font-weight: 700;
+  font-size: 44px;
+  font-weight: 900;
   line-height: 1.2;
   margin-bottom: 12px;
-  color: var(--text-dark);
+  color: var(--primary);
+  letter-spacing: -1px;
 }
 
 .section-header p {
@@ -108,14 +113,15 @@ main {
 }
 
 .hero-content h1 {
-  font-size: 56px;
-  font-weight: 800;
-  line-height: 1.15;
-  color: var(--text-dark);
+  font-size: 52px;
+  font-weight: 900;
+  line-height: 1.2;
+  color: var(--primary);
   margin-bottom: 20px;
   max-width: 900px;
   margin-left: auto;
   margin-right: auto;
+  letter-spacing: -1px;
 }
 
 .hero-subtitle {
