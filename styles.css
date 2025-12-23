@@ -1,0 +1,52 @@
+:root{
+  --bg:#f6f8fb;
+  --card:#ffffff;
+  --accent:#0b66ff; /* blue accent */
+  --muted:#6b7280;
+  --container-width:1100px;
+}
+*{box-sizing:border-box}
+html,body{height:100%;margin:0;font-family:Inter, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial}
+body{background:linear-gradient(180deg,var(--bg),#eef3ff);color:#0f1724}
+.container{max-width:var(--container-width);margin:0 auto;padding:36px}
+.topbar{position:fixed;left:0;right:0;top:0;background:transparent;padding:12px 0;z-index:40}
+.topbar .container{display:flex;align-items:center;justify-content:space-between}
+.logo{height:34px}
+nav button{border:0;background:transparent;font-size:18px;padding:8px 12px;border-radius:8px;cursor:pointer}
+
+main#deck{padding-top:84px}
+.slide{min-height:calc(100vh - 84px);display:flex;align-items:center}
+.slide-inner{background:var(--card);padding:48px;border-radius:14px;box-shadow:0 8px 30px rgba(13,24,50,0.08)}
+.hero .slide-inner{display:flex;flex-direction:column;gap:18px;align-items:flex-start}
+h1{font-size:44px;margin:0}
+.subtitle{color:var(--muted);font-size:18px}
+.cta-row{display:flex;gap:12px;margin-top:8px}
+.btn{display:inline-block;padding:10px 16px;border-radius:10px;text-decoration:none;font-weight:600}
+.btn.primary{background:var(--accent);color:white}
+.btn.ghost{background:transparent;border:2px solid rgba(11,102,255,0.12);color:var(--accent)}
+
+.features-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:18px;margin-top:18px}
+.feature{padding:18px;border-radius:10px;background:linear-gradient(180deg,#fff,#fbfdff);box-shadow:0 4px 18px rgba(11,102,255,0.04)}
+.feature h3{margin:0 0 8px 0}
+
+.stats{display:flex;gap:18px;flex-wrap:wrap;margin-top:18px}
+.stat{flex:1 1 160px;background:linear-gradient(90deg,#fff,#fbfdff);padding:18px;border-radius:10px;text-align:center}
+.num{display:block;font-weight:800;font-size:28px;color:var(--accent)}
+.label{display:block;color:var(--muted);font-size:13px}
+
+.team-grid{display:flex;gap:12px;flex-wrap:wrap;margin-top:12px}
+.person{background:#fff;padding:12px;border-radius:10px;min-width:160px}
+.person strong{display:block}
+
+.contact-form{display:grid;gap:10px;max-width:520px}
+.contact-form input,.contact-form textarea{padding:12px;border-radius:8px;border:1px solid #e6edf3}
+
+/* responsive */
+@media (max-width:800px){
+  h1{font-size:32px}
+  .container{padding:20px}
+  .slide-inner{padding:28px}
+}
+
+/* small helper visuals for deck feel */
+.slide[data-title]::before{content:attr(data-title);position:absolute;left:18px;top:96px;color:rgba(15,23,36,0.08);font-size:120px;font-weight:800;pointer-events:none}

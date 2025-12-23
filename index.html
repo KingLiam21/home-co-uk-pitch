@@ -1,0 +1,105 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Home.co.uk — Pitch Deck</title>
+  <link rel="stylesheet" href="styles.css">
+  <meta name="description" content="Pitch deck style one-page website for Home.co.uk" />
+</head>
+<body>
+  <header class="topbar">
+    <div class="container">
+      <img src="assets/logo.svg" alt="Home.co.uk" class="logo">
+      <nav>
+        <button id="prev" aria-label="Previous slide">◀</button>
+        <button id="next" aria-label="Next slide">▶</button>
+      </nav>
+    </div>
+  </header>
+
+  <main id="deck">
+    <section class="slide hero" data-title="Hero">
+      <div class="slide-inner container">
+        <h1>Home.co.uk</h1>
+        <p class="subtitle">Part of an ecosystem with Homemove &amp; Homedata — an intent-based platform that delivers leads earlier in the moving journey.</p>
+        <div class="cta-row">
+          <a class="btn primary" href="#section-features">Explore offerings</a>
+          <a class="btn ghost" href="#contact">Request demo</a>
+        </div>
+      </div>
+    </section>
+
+    <section id="section-problem" class="slide">
+      <div class="slide-inner container">
+        <h2>Why the market needs Home.co.uk</h2>
+        <p>Property and proptech leaders were frustrated by a broken, fragmented moving process. Agents and consumers expect more joined-up journeys, clearer intent signals and tools that help convert leads.</p>
+        <ul class="bullets">
+          <li>Fragmented data and siloed services</li>
+          <li>Agents need lead generation, dashboards and analytics</li>
+          <li>Consumers want a joined-up moving experience</li>
+        </ul>
+      </div>
+    </section>
+
+    <section id="section-features" class="slide">
+      <div class="slide-inner container">
+        <h2>Our solution</h2>
+        <div class="features-grid">
+          <div class="feature">
+            <h3>Intent-based lead platform</h3>
+            <p>Capture and surface early intent signals so agents receive higher-quality leads ahead of typical lead-handling flows.</p>
+          </div>
+          <div class="feature">
+            <h3>Agent tools &amp; dashboards</h3>
+            <p>Listings free of charge, management dashboards, analytics and local proof to help agents convert and retain customers.</p>
+          </div>
+          <div class="feature">
+            <h3>Founder 250</h3>
+            <p>Exclusive packages for early partners with commercial protections, early access to tools and local credibility benefits.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="section-stats" class="slide">
+      <div class="slide-inner container">
+        <h2>Go-to-market & revenue</h2>
+        <div class="stats">
+          <div class="stat"><span class="num">Onboard agents</span><span class="label">High lead-volume areas</span></div>
+          <div class="stat"><span class="num">Sales targets</span><span class="label">50 calls/day; 2 branches/day</span></div>
+          <div class="stat"><span class="num">Monetisation</span><span class="label">Upsell Founder 250 and cross-sell new products</span></div>
+        </div>
+        <p style="margin-top:12px;color:var(--muted)">Focus on agent engagement, demonstration of value, and repeatable growth as the product suite evolves.</p>
+      </div>
+    </section>
+
+    <section id="section-team" class="slide">
+      <div class="slide-inner container">
+        <h2>Founders</h2>
+        <div class="team-grid">
+          <div class="person"><strong>James Freestone</strong><span>Co-founder</span></div>
+          <div class="person"><strong>Louis O’Connell-Bristow</strong><span>Co-founder</span></div>
+          <div class="person"><strong>Product &amp; Growth</strong><span>Team</span></div>
+        </div>
+        <p style="margin-top:12px;color:var(--muted)">Born from shared experience in property and proptech to build a joined-up home-moving journey.</p>
+      </div>
+    </section>
+
+    <section id="contact" class="slide footer-slide">
+      <div class="slide-inner container">
+        <h2>Contact</h2>
+        <p>Ready to collaborate? Get in touch and we'll set up a demo.</p>
+        <form id="contactForm" class="contact-form">
+          <input type="text" name="name" placeholder="Your name" required>
+          <input type="email" name="email" placeholder="Email" required>
+          <textarea name="message" placeholder="Brief message" rows="4"></textarea>
+          <button class="btn primary" type="submit">Send</button>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>

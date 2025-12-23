@@ -1,0 +1,17 @@
+# Node / OS
+node_modules/
+.DS_Store
+.env
+.venv
+__pycache__/
+
+# Vercel
+.vercel/
+
+# IDEs
+.vscode/
+.idea/
+
+# build
+dist/
+build/
