@@ -1,29 +1,75 @@
-// Simple slide navigation + keyboard
-document.addEventListener('DOMContentLoaded', ()=>{
-  const slides = Array.from(document.querySelectorAll('.slide'))
-  let idx = 0
-  const show = i => {
-    idx = (i + slides.length) % slides.length
-    slides.forEach((s, j)=> s.style.display = j===idx? 'flex':'none')
-    // focus top for keyboard
-    slides[idx].scrollIntoView({behavior:'smooth',block:'center'})
+// Count-up animation for stats
+function animateCount(element, target, suffix = '') {
+  const duration = 2000;
+  const start = 0;
+  const increment = target / (duration / 16);
+  let current = start;
+  
+  const timer = setInterval(() => {
+    current += increment;
+    if (current >= target) {
+      element.textContent = target + suffix;
+      clearInterval(timer);
+    } else {
+      element.textContent = Math.floor(current) + suffix;
+    }
+  }, 16);
+}
+
+// Intersection Observer for stats animation
+const observerOptions = {
+  threshold: 0.5,
+  rootMargin: '0px'
+};
+
+const statsObserver = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting && !entry.target.classList.contains('counted')) {
+      entry.target.classList.add('counted');
+      const statNumbers = entry.target.querySelectorAll('.stat-number');
+      
+      statNumbers.forEach(stat => {
+        const text = stat.textContent;
+        const match = text.match(/(\d+(?:\.\d+)?)(k?\+?)/i);
+        if (match) {
+          const num = parseFloat(match[1]);
+          const suffix = match[2];
+          animateCount(stat, num, suffix);
+        }
+      });
+    }
+  });
+}, observerOptions);
+
+// Tilt effect for cards
+function addTiltEffect(card) {
+  card.addEventListener('mousemove', (e) => {
+    const rect = card.getBoundingClientRect();
+    const x = e.clientX - rect.left;
+    const y = e.clientY - rect.top;
+    
+    const centerX = rect.width / 2;
+    const centerY = rect.height / 2;
+    
+    const rotateX = (y - centerY) / 10;
+    const rotateY = (centerX - x) / 10;
+    
+    card.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) translateY(-8px)`;
+  });
+  
+  card.addEventListener('mouseleave', () => {
+    card.style.transform = 'perspective(1000px) rotateX(0) rotateY(0) translateY(0)';
+  });
+}
+
+document.addEventListener('DOMContentLoaded', () => {
+  // Observe stats banner
+  const statsBanner = document.querySelector('.stats-banner');
+  if (statsBanner) {
+    statsObserver.observe(statsBanner);
   }
-  show(0)
-
-  document.getElementById('next').addEventListener('click', ()=> show(idx+1))
-  document.getElementById('prev').addEventListener('click', ()=> show(idx-1))
-
-  document.addEventListener('keydown', e=>{
-    if(e.key === 'ArrowRight' || e.key === 'PageDown') show(idx+1)
-    if(e.key === 'ArrowLeft' || e.key === 'PageUp') show(idx-1)
-  })
-
-  // smooth contact form demo (no backend)
-  const form = document.getElementById('contactForm')
-  if(form) form.addEventListener('submit', e=>{
-    e.preventDefault()
-    const btn = form.querySelector('button')
-    btn.disabled = true; btn.textContent = 'Sending...'
-    setTimeout(()=>{ btn.textContent='Sent'; btn.disabled=false; form.reset() }, 900)
-  })
-})
+  
+  // Add tilt effect to all cards
+  const cards = document.querySelectorAll('.problem-card, .feature-card, .metric-card, .team-card');
+  cards.forEach(card => addTiltEffect(card));
+});
