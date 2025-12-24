@@ -103,7 +103,8 @@ main {
 /* Hero Section */
 .hero {
   padding: 120px 40px 80px;
-  background: linear-gradient(180deg, rgba(0,0,0,0.45), rgba(0,0,0,0.45));
+  background: linear-gradient(180deg, rgba(0,0,0,0.5), rgba(0,0,0,0.5)), 
+              url('https://images.unsplash.com/photo-1568605114967-8130f3a36994?ixlib=rb-4.0.3&auto=format&fit=crop&w=2400&q=80');
   background-size: cover;
   background-position: center center;
   text-align: center;
