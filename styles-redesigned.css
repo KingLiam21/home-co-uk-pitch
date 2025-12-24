@@ -380,6 +380,19 @@ main {
 .accordion .acc-body { padding: 0 18px 16px; color: var(--text-muted); }
 .accordion .acc-body ul { padding-left: 18px; margin: 10px 0 0; }
 
+/* Founder 250 helpers */
+.founder-section { background: var(--white); }
+.callout { border: 1px solid var(--border); border-left: 4px solid var(--primary); border-radius: 12px; padding: 16px 18px; background: #fff; color: var(--text-muted); margin-bottom: 22px; }
+.positioning { text-align: center; margin: 24px 0 10px; }
+.positioning .quote { font-size: 18px; font-weight: 700; color: var(--text-dark); }
+.positioning .muted { color: var(--text-muted); margin-top: 6px; }
+.check-list { list-style: none; padding-left: 0; }
+.check-list li { position: relative; padding-left: 24px; margin: 8px 0; }
+.check-list li:before { content: '✔'; position: absolute; left: 0; top: 0; color: var(--primary); }
+.badge-list { display: flex; flex-wrap: wrap; gap: 8px; margin: 6px 0 10px; }
+.tag { display: inline-block; padding: 6px 10px; border-radius: 999px; background: var(--secondary); border: 1px solid var(--border); font-size: 12px; font-weight: 600; color: var(--text-dark); }
+.small-muted { font-size: 12px; color: var(--text-light); }
+
 .metric-card {
   background: var(--white);
   padding: 40px 24px;
