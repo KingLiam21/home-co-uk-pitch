@@ -370,6 +370,16 @@ main {
 .milestone .m-label { font-weight: 600; color: var(--primary); margin-bottom: 6px; }
 .milestone p { font-size: 14px; color: var(--text-muted); }
 
+/* Accordion (collapsible) */
+.accordion { margin-top: 24px; }
+.accordion details { border: 1px solid var(--border); border-radius: 12px; background: var(--white); margin-bottom: 12px; overflow: hidden; }
+.accordion summary { cursor: pointer; list-style: none; padding: 14px 18px; font-weight: 700; color: var(--text-dark); position: relative; }
+.accordion summary::-webkit-details-marker { display: none; }
+.accordion summary:after { content: '▾'; position: absolute; right: 16px; top: 14px; color: var(--text-light); transition: transform 0.2s; }
+.accordion details[open] summary:after { transform: rotate(180deg); }
+.accordion .acc-body { padding: 0 18px 16px; color: var(--text-muted); }
+.accordion .acc-body ul { padding-left: 18px; margin: 10px 0 0; }
+
 .metric-card {
   background: var(--white);
   padding: 40px 24px;

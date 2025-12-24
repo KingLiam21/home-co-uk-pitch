@@ -72,4 +72,14 @@ document.addEventListener('DOMContentLoaded', () => {
   // Add tilt effect to all cards
   const cards = document.querySelectorAll('.problem-card, .feature-card, .metric-card, .team-card');
   cards.forEach(card => addTiltEffect(card));
+
+  // Accordion: allow one open at a time
+  const accordions = document.querySelectorAll('.accordion details');
+  accordions.forEach(d => {
+    d.addEventListener('toggle', () => {
+      if (d.open) {
+        accordions.forEach(other => { if (other !== d) other.open = false; });
+      }
+    });
+  });
 });
