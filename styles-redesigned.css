@@ -149,6 +149,8 @@ main {
   cursor: pointer;
   transition: all 0.3s;
   text-align: center;
+}
+
 .btn-primary {
   background: linear-gradient(135deg, var(--primary), var(--primary-dark));
   color: var(--white);
@@ -164,12 +166,15 @@ main {
 
 .btn-secondary {
   background: var(--white);
-  color: var(--primary);
-  border: 2px solid var(--primary);
+  color: var(--text-dark);
+  border: 2px solid var(--border);
+  border-radius: 10px;
+  padding: 14px 32px;
 }
 
 .btn-secondary:hover {
   background: var(--secondary);
+  border-color: var(--primary);
   transform: translateY(-2px);
 }
 
