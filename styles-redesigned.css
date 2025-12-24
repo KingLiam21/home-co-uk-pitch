@@ -1,13 +1,13 @@
 /* Modern Pitch Deck Styles - Home.co.uk Redesign */
 
 :root {
-  --primary: #0066cc;
-  --primary-dark: #0052a3;
+  --primary: #ff2b6d; /* Home pink */
+  --primary-dark: #e0215a;
   --secondary: #f5f7fa;
   --text-dark: #0f172a;
   --text-muted: #475569;
   --text-light: #64748b;
-  --border: #e2e8f0;
+  --border: #e9edf2;
   --white: #ffffff;
   --success: #22c55e;
 }
@@ -103,7 +103,9 @@ main {
 /* Hero Section */
 .hero {
   padding: 120px 40px 80px;
-  background: linear-gradient(135deg, #f8fafc 0%, #f1f5fb 100%);
+  background: linear-gradient(180deg, rgba(0,0,0,0.45), rgba(0,0,0,0.45));
+  background-size: cover;
+  background-position: center center;
   text-align: center;
 }
 
@@ -111,7 +113,7 @@ main {
   font-size: 56px;
   font-weight: 800;
   line-height: 1.15;
-  color: var(--text-dark);
+  color: var(--white);
   margin-bottom: 20px;
   max-width: 900px;
   margin-left: auto;
@@ -120,7 +122,7 @@ main {
 
 .hero-subtitle {
   font-size: 20px;
-  color: var(--text-muted);
+  color: rgba(255,255,255,0.92);
   margin-bottom: 32px;
   max-width: 700px;
   margin-left: auto;
@@ -147,17 +149,17 @@ main {
   cursor: pointer;
   transition: all 0.3s;
   text-align: center;
-}
-
 .btn-primary {
-  background: var(--primary);
+  background: linear-gradient(135deg, var(--primary), var(--primary-dark));
   color: var(--white);
+  border-radius: 10px;
+  padding: 14px 32px;
 }
 
 .btn-primary:hover {
   background: var(--primary-dark);
   transform: translateY(-2px);
-  box-shadow: 0 4px 12px rgba(0, 102, 204, 0.25);
+  box-shadow: 0 8px 28px rgba(255, 43, 109, 0.18);
 }
 
 .btn-secondary {
@@ -173,8 +175,8 @@ main {
 
 /* Stats Banner */
 .stats-banner {
-  background: var(--primary);
-  color: var(--white);
+  background: var(--white);
+  color: var(--text-dark);
   padding: 60px 40px;
 }
 
@@ -194,6 +196,7 @@ main {
   font-size: 48px;
   font-weight: 800;
   margin-bottom: 8px;
+  color: var(--text-dark);
 }
 
 .stat-label {
@@ -260,7 +263,7 @@ main {
 
 .feature-card:hover {
   border-color: var(--primary);
-  box-shadow: 0 12px 32px rgba(0, 102, 204, 0.1);
+  box-shadow: 0 18px 48px rgba(255, 43, 109, 0.08);
   transform: translateY(-6px);
 }
 
@@ -390,7 +393,7 @@ main {
 
 /* Contact Section */
 .contact-section {
-  background: linear-gradient(135deg, #0066cc 0%, #0052a3 100%);
+  background: linear-gradient(135deg, var(--primary), var(--primary-dark));
   color: var(--white);
   text-align: center;
 }
